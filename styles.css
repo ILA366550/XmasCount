@@ -1,0 +1,102 @@
+#snowEffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1; /* Menține fulgii sub conținutul principal, dar deasupra fundalului */
+}
+
+#countdownContainer {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1; /* Asigură că numărătoarea inversă este deasupra fulgilor */
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    background-color: #d32f2f; /* Roșu de Crăciun */
+	background-image: url('Images/christmas_background_1080p.png');
+	
+	background-position: center;
+    color: white; /* Text alb pentru contrast */
+    font-family: 'Arial', sans-serif;
+}
+
+.snowflake {
+    position: absolute;
+    user-select: none;
+    color: white; /* Asigură vizibilitatea fulgilor */
+    animation: fall infinite linear;
+    z-index: 0; /* Asigură că fulgii sunt deasupra altor elemente */
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10%); }
+    100% { transform: translateY(110vh); } /* Fulgii vor cădea până sub vizibilitatea paginii */
+}
+button:hover {
+    background-color: #0a9396; /* Albastru deschis la hover */
+    transform: scale(1.1); /* Ușoară mărire la hover */
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #005f73; /* Albastru închis pentru un contrast bun cu roșul */
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 2px 2px 5px #000;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0a9396; /* Albastru deschis la hover */
+    transform: scale(1.1); /* Ușoară mărire la hover */
+}
+
+button:active {
+    transform: scale(0.9); /* Micșorare la apăsare */
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* Moșteneste culoarea butonului */
+}
+
+#countdownContainer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2); /* Ușor transparent pentru a evidenția textul */
+    border-radius: 10px; /* Margini rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Umbră pentru adâncime */
+    z-index: 1;
+}
+
+#title {
+    font-size: 3rem; /* Dimensiune mare pentru titlu */
+    text-shadow: 2px 2px 4px #000; /* Umbră pentru text pentru a îmbunătăți lizibilitatea */
+    margin-bottom: 15px; /* Spațiu sub titlu */
+}
+
+#countdown {
+    font-size: 2rem; /* Dimensiune adecvată pentru vizibilitate */
+    font-weight: bold; /* Text îngroșat */
+    text-shadow: 2px 2px 4px #000; /* Umbră pentru text */
+}
