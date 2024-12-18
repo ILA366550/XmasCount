@@ -1,4 +1,4 @@
-/* Stil general */
+/* Stil general pentru corpul paginii */
 body, html {
     margin: 0;
     padding: 0;
@@ -8,34 +8,65 @@ body, html {
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, #ffffff, #d7e8ba); /* Alb și verde pastel */
-    color: #2b2b2b; /* Gri închis */
-    font-family: 'Nunito', sans-serif;
-    overflow: hidden; /* Previne scroll-ul */
+    color: #2b2b2b; /* Gri închis pentru text */
+    font-family: 'Nunito', sans-serif; /* Font prietenos */
+    overflow: hidden; /* Previne scroll-ul vertical */
+    position: relative; /* Fixează layout-ul */
 }
 
-/* Container pentru fulgii de zăpadă */
+/* Container pentru efectul fulgilor de zăpadă */
 #snowEffect {
-    position: fixed;
+    position: fixed; /* Fulgii rămân fixați pe ecran */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 1;
+    pointer-events: none; /* Previne interacțiunea cu fulgii */
+    overflow: hidden; /* Fără overflow vizibil */
+    z-index: 1; /* Asigură-te că este deasupra fundalului */
 }
 
-/* Stil pentru fiecare fulg */
+/* Stil pentru fiecare fulg de zăpadă */
 .snowflake {
-    position: absolute;
-    top: -10%;
-    color: white;
-    user-select: none;
-    pointer-events: none;
-    animation: fall infinite linear;
+    position: absolute; /* Evită ca fulgii să afecteze fluxul normal */
+    top: -10%; /* Începe deasupra ecranului */
+    color: white; /* Fulgii sunt albi */
+    user-select: none; /* Nu pot fi selectați */
+    pointer-events: none; /* Nu pot fi clickați */
+    animation: fall infinite linear; /* Animația de cădere */
+    font-size: 12px; /* Dimensiune implicită */
+    opacity: 0.7; /* Nivel de transparență */
 }
 
-/* Animație pentru cădere */
+/* Animație pentru căderea fulgilor */
 @keyframes fall {
     0% { transform: translateY(-10%); }
-    100% { transform: translateY(110vh); }
+    100% { transform: translateY(110vh); } /* Cade sub vizibilitatea ecranului */
+}
+
+/* Stil pentru containerul principal */
+#countdownContainer {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Deasupra fulgilor */
+    position: relative; /* Păstrează poziția pe pagina principală */
+}
+
+/* Stil pentru butoane */
+button {
+    padding: 12px 24px;
+    background-color: #ef5350;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #c62828;
+    transform: scale(1.05);
 }
