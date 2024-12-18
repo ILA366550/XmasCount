@@ -17,21 +17,19 @@ setInterval(updateCountdown, 1000);
 function createSnowflake() {
     const snowflake = document.createElement("div");
     snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄️"; // Emoji pentru fulg de zăpadă
-    snowflake.style.left = Math.random() * 100 + "vw"; // Poziție aleatoare pe lățimea paginii
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // Durată variabilă a animației
-    snowflake.style.opacity = Math.random() * 0.8 + 0.2; // Opacitate variabilă
-    snowflake.style.fontSize = Math.random() * 20 + 10 + "px"; // Dimensiuni diferite ale fulgilor
+    snowflake.textContent = "❄️";
+    snowflake.style.left = Math.random() * 100 + "vw";
+    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s";
+    snowflake.style.opacity = Math.random() * 0.8 + 0.2;
+    snowflake.style.fontSize = Math.random() * 20 + 10 + "px";
 
-    document.body.appendChild(snowflake);
+    const snowEffectContainer = document.getElementById("snowEffect");
+    snowEffectContainer.appendChild(snowflake);
 
-    // Elimină fulgul din DOM după 5 secunde
     setTimeout(() => {
         snowflake.remove();
-    }, 5000);
+    }, 5000); // Elimină fulgul după 5 secunde
 }
 
-// Creează fulgi noi la fiecare 500ms
-setInterval(createSnowflake, 500);
 
 
