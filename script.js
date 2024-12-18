@@ -35,41 +35,51 @@ document.addEventListener("DOMContentLoaded", () => {
     // Creează fulgi de zăpadă în mod continuu
     setInterval(createSnowflake, 500);
 });
+
 const canvas = document.getElementById('santaCanvas');
 const ctx = canvas.getContext('2d');
 
+// Setarea dimensiunilor canvas-ului
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Imagine pentru Moș Crăciun cu sania și renii
+// Imaginea Moș Crăciun
 const santaImage = new Image();
-santaImage.src = 'Images/santa_sleigh_rudolph.png'; // Asigură-te că acest fișier există
+santaImage.src = 'Images/santa_sleigh_rudolph.png'; // Calea corectă către imagine
 
-let santaX = -300; // Poziția inițială în afara ecranului
-let santaY = canvas.height * 0.2; // Poziția pe verticală
+// Poziționare inițială
+let santaX = -400; // Start din afara ecranului (stânga)
+const santaY = canvas.height * 0.3; // Aproximativ 30% de sus
 
 function drawSanta() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Șterge canvas-ul
-    ctx.drawImage(santaImage, santaX, santaY, 500, 500); // Desenează Moș Crăciun
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Curăță canvas-ul
 
-    santaX += 5; // Mișcă sania spre dreapta
+    // Desenează imaginea cu redimensionare automată
+    const santaWidth = 400; // Lățimea imaginii
+    const santaHeight = santaImage.height * (santaWidth / santaImage.width); // Păstrează proporțiile
 
-    // Când Moș Crăciun iese de pe ecran, reîncepe
+    ctx.drawImage(santaImage, santaX, santaY, santaWidth, santaHeight);
+
+    // Mișcă imaginea spre dreapta
+    santaX += 3; // Viteza de deplasare
+
+    // Când iese de pe ecran, reîncepe din stânga
     if (santaX > canvas.width) {
-        santaX = -300;
+        santaX = -400;
     }
 
-    requestAnimationFrame(drawSanta); // Reapelez funcția pentru un efect de animație
+    requestAnimationFrame(drawSanta); // Continuă animația
 }
 
+// Inițierea animației după încărcarea imaginii
 santaImage.onload = () => {
-    drawSanta(); // Începe animația după ce imaginea s-a încărcat
+    drawSanta();
 };
 
-// Redimensionare canvas la schimbarea dimensiunii ferestrei
+// Redimensionarea canvas-ului automat la schimbarea ferestrei
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    santaY = canvas.height * 0.2;
 });
+
 
