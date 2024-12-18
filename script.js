@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             countdownElement.innerHTML = "Crăciun Fericit!";
         } else {
             let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            countdownElement.innerHTML = `Mai sunt ${days} zile până la Crăciun!`;
+            countdownElement.innerHTML = `... in ${days} zile!`;
         }
     }
     setInterval(updateCountdown, 1000); // Actualizează numărătoarea la fiecare secundă
