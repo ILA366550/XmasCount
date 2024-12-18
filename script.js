@@ -1,9 +1,10 @@
-let countdownDate = new Date("Dec 24, 2024 00:00:00").getTime();
+let countdownDate = new Date(Date.UTC(2024, 11, 24, 0, 0, 0)); // Setează data Crăciunului în UTC
 let countdownElement = document.getElementById("countdown");
 
 function updateCountdown() {
     let now = new Date().getTime();
     let distance = countdownDate - now;
+    
     if (distance < 0) {
         countdownElement.innerHTML = "Crăciun Fericit!";
     } else {
@@ -13,6 +14,7 @@ function updateCountdown() {
         countdownElement.innerHTML = `${days} zile ${hours} ore ${minutes} minute`;
     }
 }
+
 setInterval(updateCountdown, 1000);
 
 function createSnowflake() {
