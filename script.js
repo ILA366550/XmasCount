@@ -28,8 +28,8 @@ function createSnowflake() {
 
     setTimeout(() => {
         snowflake.remove();
-    }, 5000); // Elimină fulgul după 5 secunde
+    }, 5000);
 }
 
-
-
+// Creează fulgi noi la fiecare 500ms
+setInterval(createSnowflake, 500);
