@@ -20,7 +20,7 @@ setInterval(updateCountdown, 1000);
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
-    snowflake.textContent = '❄️'; // Emoji fulg de zăpadă
+    snowflake.textContent = '❄️'; // Emoji fulg 
     snowflake.style.position = 'absolute';
     snowflake.style.left = Math.random() * 100 + 'vw'; // Distribuție pe toată lățimea paginii
     snowflake.style.top = '-10%'; // Începe de deasupra ecranului
