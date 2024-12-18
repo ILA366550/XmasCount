@@ -50,7 +50,7 @@ let santaY = canvas.height * 0.2; // Poziția pe verticală
 
 function drawSanta() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Șterge canvas-ul
-    ctx.drawImage(santaImage, santaX, santaY, 6327, 3729); // Desenează Moș Crăciun
+    ctx.drawImage(santaImage, santaX, santaY, 1920, 1080); // Desenează Moș Crăciun
 
     santaX += 5; // Mișcă sania spre dreapta
 
