@@ -29,7 +29,7 @@ body, html {
     align-items: center;
     justify-content: top;
     background-color: #d32f2f; 
-	background-image: url('/Images/christmas_background_1080p.png');
+	background-image: url('Images/christmas_background_1080p.png');
 	
 	background-position: center;
     color: white; 
