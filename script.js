@@ -35,3 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // Creează fulgi de zăpadă în mod continuu
     setInterval(createSnowflake, 500);
 });
+const canvas = document.getElementById('santaCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Imagine pentru Moș Crăciun cu sania și renii
+const santaImage = new Image();
+santaImage.src = 'Images/santa_sleigh_rudolph.png'; // Asigură-te că acest fișier există
+
+let santaX = -300; // Poziția inițială în afara ecranului
+let santaY = canvas.height * 0.2; // Poziția pe verticală
+
+function drawSanta() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Șterge canvas-ul
+    ctx.drawImage(santaImage, santaX, santaY, 300, 100); // Desenează Moș Crăciun
+
+    santaX += 5; // Mișcă sania spre dreapta
+
+    // Când Moș Crăciun iese de pe ecran, reîncepe
+    if (santaX > canvas.width) {
+        santaX = -300;
+    }
+
+    requestAnimationFrame(drawSanta); // Reapelez funcția pentru un efect de animație
+}
+
+santaImage.onload = () => {
+    drawSanta(); // Începe animația după ce imaginea s-a încărcat
+};
+
+// Redimensionare canvas la schimbarea dimensiunii ferestrei
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    santaY = canvas.height * 0.2;
+});
+
