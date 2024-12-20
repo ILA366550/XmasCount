@@ -160,3 +160,12 @@ body{
     background-color: #f0ad00;
     color: white;
 }
+#quiz-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+}
