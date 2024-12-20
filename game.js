@@ -150,15 +150,21 @@ function startTimer() {
 
 function endGame() {
     clearInterval(timer);
-    resultElement.textContent = `Scor final: ${score} din ${questions.length}`;
+
+    // Mesaj personalizat în funcție de scor
+    let finalMessage = "";
+    if (score > 10) {
+        finalMessage = "🎅 Felicitări! Moș Crăciun este foarte mândru de tine și știe că vei avea un Crăciun minunat! 🎄";
+    } else {
+        finalMessage = "🎅 Oh, nu! Moș Crăciun este puțin supărat. Mai încearcă și vei reuși! 🎁";
+    }
+
+    // Afișăm scorul și mesajul
+    resultElement.innerHTML = `
+        <p>Scor final: ${score} din ${questions.length}</p>
+        <p>${finalMessage}</p>
+    `;
     startButton.disabled = false;
     startButton.textContent = "Reîncepe jocul";
 }
-
-startButton.addEventListener("click", function () {
-    if (!isGameActive) {
-        startGame();
-    } else {
-        location.reload(); 
-    }
 });
