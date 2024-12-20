@@ -144,3 +144,19 @@ body{
         flex: 0 0 calc(25% - 1rem);
     }
 }
+.quiz-btn {
+    background-color: #ffbf00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.quiz-btn:hover {
+    background-color: #f0ad00;
+    color: white;
+}
