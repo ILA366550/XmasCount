@@ -214,3 +214,34 @@ button:hover {
         flex: 0 0 calc(25% - 1rem);
     }
 }
+.quiz-btn, #start-btn {
+    background: linear-gradient(45deg, #ff4e50, #f9d423); 
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 25px; 
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.quiz-btn:hover, #start-btn:hover {
+    background: linear-gradient(45deg, #f12711, #f5af19); 
+    transform: scale(1.1); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.quiz-btn:active, #start-btn:active {
+    transform: scale(0.95); 
+}
+
+.quiz-btn {
+    margin-top: 20px;
+}
+
+#start-btn {
+    margin-top: 30px;
+    padding: 15px 40px; 
