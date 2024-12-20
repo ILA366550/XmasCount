@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Rammetto+One&display=swap');
 
-:root{
+:root {
     --smallFont: 'Manrope', sans-serif;
     --largeFont: 'Rammetto One', cursive;
 }
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: var(--smallFont);
 }
-body{
+
+body {
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
-.container{
+
+.container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -23,28 +28,32 @@ body{
     position: relative;
     padding: 0 1.2rem;
 }
-.container::after{
+
+.container::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background:rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
-#bg-video{
+
+#bg-video {
     position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-.content{
+
+.content {
     z-index: 1;
     color: #fff;
     margin: 3rem 0;
 }
-.content h1{
+
+.content h1 {
     font-size: 2rem;
     text-transform: uppercase;
     font-family: var(--largeFont);
@@ -53,7 +62,8 @@ body{
     position: relative;
     padding-bottom: 0.8rem;
 }
-.content h1::after{
+
+.content h1::after {
     position: absolute;
     content: "";
     bottom: 0;
@@ -64,20 +74,23 @@ body{
     width: 60%;
     background: #ffbf00;
 }
-.content h2{
+
+.content h2 {
     font-size: 1.15rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 7px;
     padding-top: 1.2rem;
 }
-.time-show{
+
+.time-show {
     margin: 3.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.time-show div{
+
+.time-show div {
     background: #fff;
     margin: 0.5rem;
     width: 150px;
@@ -88,62 +101,34 @@ body{
     align-items: center;
     justify-content: center;
 }
-.time-show div span{
+
+.time-show div span {
     display: block;
     font-size: 3rem;
     font-weight: 400;
     opacity: 0.9;
 }
-.time-show div p{
+
+.time-show div p {
     color: #B11809;
     text-transform: uppercase;
     font-size: 1.2rem;
     letter-spacing: 2px;
     font-weight: 600;
 }
-.container blockquote{
+
+.container blockquote {
     font-size: 1.2rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-.container blockquote span{
+
+.container blockquote span {
     font-size: 0.6rem;
     display: inline-block;
 }
 
-
-
-@media screen and (min-width: 480px){
-    .content h1{
-        font-size: 3rem;
-    }
-    .time-show{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .time-show div{
-        flex: 0 0 calc(50% - 1rem);
-        width: 190px;
-        height: 180px;
-    }
-}
-
-
-@media screen and (min-width: 768px){
-    .content h1{
-        font-size: 3.4rem;
-    }
-}
-
-@media screen and (min-width: 992px){
-    .container{
-        padding: 0 3rem;
-    }
-    .time-show div{
-        flex: 0 0 calc(25% - 1rem);
-    }
-}
 .quiz-btn {
     background-color: #ffbf00;
     color: #000;
@@ -156,10 +141,12 @@ body{
     text-transform: uppercase;
     font-weight: bold;
 }
+
 .quiz-btn:hover {
     background-color: #f0ad00;
     color: white;
 }
+
 #quiz-container {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -168,4 +155,62 @@ body{
     max-width: 500px;
     margin: 50px auto;
     text-align: center;
+    color: #fff;
+}
+
+#timer {
+    font-size: 1.5rem;
+    color: #ffbf00;
+    margin-bottom: 20px;
+}
+
+#result {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: yellow;
+}
+
+button {
+    background-color: #005f73;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0a9396;
+}
+
+@media screen and (min-width: 480px) {
+    .content h1 {
+        font-size: 3rem;
+    }
+    .time-show {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .time-show div {
+        flex: 0 0 calc(50% - 1rem);
+        width: 190px;
+        height: 180px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .content h1 {
+        font-size: 3.4rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        padding: 0 3rem;
+    }
+    .time-show div {
+        flex: 0 0 calc(25% - 1rem);
+    }
 }
